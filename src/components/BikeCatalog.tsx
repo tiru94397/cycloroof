@@ -40,7 +40,7 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
       name: 'Speed 400',
       brand: 'Triumph',
       price: 275000,
-      image: 'https://images.unsplash.com/photo-1669905153773-4fab38326b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NjU1NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/trumph.jpg', // <-- Use relative path to your image
       mileage: 35,
       fuelType: 'Petrol',
       engine: '398cc',
@@ -52,10 +52,10 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
     },
     {
       id: '2',
-      name: 'Electric Scooter Pro',
+      name: 'Ather 450S',
       brand: 'Modern',
       price: 150000,
-      image: 'https://images.unsplash.com/photo-1583322319396-08178ea4f8b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NzQzOTI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/evscoooter.jpg', // <-- Use relative path to your image
       mileage: 120,
       fuelType: 'Electric',
       engine: '3kW Motor',
@@ -67,10 +67,10 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
     },
     {
       id: '3',
-      name: 'Cafe Racer 650',
+      name: 'Honda Unicorn',
       brand: 'Vintage',
-      price: 320000,
-      image: 'https://images.unsplash.com/photo-1642418425655-7168f530b42d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NzQzOTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      price: 110000,
+      image: '/honda_unicorn.jpg', // <-- Use relative path to your image
       mileage: 28,
       fuelType: 'Petrol',
       engine: '648cc',
@@ -82,10 +82,10 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
     },
     {
       id: '4',
-      name: 'Urban E-Bike',
+      name: 'Honda Activa EV',
       brand: 'Electric',
       price: 85000,
-      image: 'https://images.unsplash.com/photo-1692668696811-90976b749459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NzAwNTU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/honda_activa_ev.jpg', // <-- Use relative path to your image
       mileage: 80,
       fuelType: 'Electric',
       engine: '1.5kW Motor',
@@ -97,10 +97,10 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
     },
     {
       id: '5',
-      name: 'Adventure 390',
+      name: 'Royal Enfield Continental GT 650',
       brand: 'Adventure',
-      price: 295000,
-      image: 'https://images.unsplash.com/photo-1669905153773-4fab38326b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NjU1NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      price: 350000,
+      image: '/gt_650.jpg', // <-- Use relative path to your image
       mileage: 32,
       fuelType: 'Petrol',
       engine: '390cc',
@@ -115,7 +115,7 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
       name: 'Classic 350',
       brand: 'Heritage',
       price: 185000,
-      image: 'https://images.unsplash.com/photo-1642418425655-7168f530b42d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fHwxNzU4NzQzOTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/classic-350.jpg', // <-- Use relative path to your image
       mileage: 40,
       fuelType: 'Petrol',
       engine: '349cc',
@@ -424,4 +424,4 @@ export function BikeCatalog({ onNavigate, onAddToCompare, compareList }: BikeCat
       </div>
     </div>
   );
-}
+} 

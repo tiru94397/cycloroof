@@ -12,15 +12,36 @@ import {
   TrendingUp
 } from 'lucide-react';
 
+// TypeScript interfaces for clarity
+interface Stat {
+  icon: React.ElementType;
+  label: string;
+  value: string;
+  color: string;
+}
+
+interface Value {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+}
+
 export function About() {
-  const stats = [
+  const stats: Stat[] = [
     { icon: Users, label: 'Happy Customers', value: '50,000+', color: 'text-blue-600' },
     { icon: Globe, label: 'Cities Covered', value: '25+', color: 'text-green-600' },
     { icon: Award, label: 'Awards Won', value: '15+', color: 'text-yellow-600' },
     { icon: TrendingUp, label: 'Bikes Sold', value: '1,00,000+', color: 'text-purple-600' }
   ];
 
-  const values = [
+  const values: Value[] = [
     {
       icon: Shield,
       title: 'Trust & Reliability',
@@ -43,7 +64,7 @@ export function About() {
     }
   ];
 
-  const team = [
+  const team: TeamMember[] = [
     {
       name: 'Rajesh Kumar',
       role: 'Founder & CEO',
@@ -67,6 +88,7 @@ export function About() {
   return (
     <div className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-8">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">About Cycloroof</h1>
@@ -93,17 +115,20 @@ export function About() {
         {/* Stats */}
         <section className="mb-16">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white text-center hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className={`w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h3>
-                  <p className="text-gray-600">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <Card key={index} className="border-0 shadow-lg bg-white text-center hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className={`w-8 h-8 ${stat.color}`} />
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h3>
+                    <p className="text-gray-600">{stat.label}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
 
@@ -150,17 +175,20 @@ export function About() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-12">Our Core Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white text-center hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <Card key={index} className="border-0 shadow-lg bg-white text-center hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-3">{value.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
 
@@ -208,27 +236,6 @@ export function About() {
           </div>
         </section>
 
-        {/* Team */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-12">Leadership Team</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white text-center hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <ImageWithFallback
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                  />
-                  <h3 className="font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-orange-600 font-medium mb-2">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
         {/* CTA */}
         <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-8 text-white text-center">
           <h2 className="text-2xl lg:text-3xl font-bold mb-4">Join the Cycloroof Family</h2>
@@ -244,6 +251,7 @@ export function About() {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -104,11 +104,11 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="space-y-3">
                 <div className="flex items-center text-primary-foreground/80">
                   <Phone className="w-4 h-4 mr-3 text-accent" />
-                  <span>1800-CYCLOROOF (24/7 Support)</span>
+                  <span>+91 90329 99860 (24/7 Support)</span>
                 </div>
                 <div className="flex items-center text-primary-foreground/80">
                   <Mail className="w-4 h-4 mr-3 text-accent" />
-                  <span>support@cycloroof.com</span>
+                  <span>siddu@cycloroof.com</span>
                 </div>
                 <div className="flex items-center text-primary-foreground/80">
                   <MapPin className="w-4 h-4 mr-3 text-accent" />
@@ -198,7 +198,7 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Copyright */}
             <div className="text-primary-foreground/60 text-sm">
-              © 2024 Cycloroof. All rights reserved. Making mobility smarter, safer, and sustainable.
+              © 2025 Cycloroof. All rights reserved. Making mobility smarter, safer, and sustainable.
             </div>
 
             {/* Legal Links */}
